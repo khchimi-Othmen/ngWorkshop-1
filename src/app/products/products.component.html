@@ -1,0 +1,20 @@
+<h2 class="center">Products List</h2>
+<form>
+
+</form>
+<div class="container" *ngFor="let p of listProdcut">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="../../assets/img.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{p.title}}</h5>
+      <h5 class="card-title">{{p.price}}</h5>
+      {{p.quantity}}
+      <button class="btn btn-primary" [disabled]="p.quantity==0" (click)="buy(p)">Buy</button>
+      <button class="btn btn-success" (click)="like(p)" >Like</button>
+      <button class="btn btn-warning" (click)="showDetails(p.id)" >Details</button>
+<!--     2éme methode ma test7a9ech ta5dem fonction f ts-->
+<!--      kaml '/' -->
+      <a [routerLink]="['/details',p.id]">ShowDetails</a>
+    </div>
+  </div>
+</div>
